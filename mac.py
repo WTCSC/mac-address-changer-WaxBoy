@@ -48,7 +48,9 @@ def macchanger():
             print(f"ERROR: MAC Address Already Defaulted")
             return 5
             
-
+    #print pre-process details
+    print(f"Interface:  {INTERFACE}\n\nInitial MAC address:  {MAC}\n")
+    
     #set MAC address
     swap = subprocess.run(['sudo', 'ip', 'link', 'set', f'{INTERFACE}', 'address', f'{INPUT}'], stderr=TRASH, stdout=TRASH)
 
@@ -57,8 +59,8 @@ def macchanger():
         print("Subprocess ERROR: Interface unavailable || MAC address invalid")
         return 6
     
-    #User feedback
-    print(f"Interface:  {INTERFACE}\n\nInitial MAC address:  {MAC}\n\nUpdated Address:  {INPUT}")  ###Split this up into 2 feedback times
+    #User Feedback
+    print(f"Updated Address:  {INPUT}") 
 
 #call function
 macchanger()
