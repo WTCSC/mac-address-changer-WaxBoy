@@ -25,7 +25,7 @@ To keep safe, it may not end in:
 
 2. Once you have determined which Interface you are currently connected to, you can move to the bash terminal.
 
-3. You can run the function using `./mac.h 'Interface' 'NewMacAddress'`, the new Mac address being whatever you want to spoof it to.
+3. You can run the function using `./mac.sh 'Interface' 'NewMacAddress'`, the new Mac address being whatever you want to spoof it to. (Replace ./mac.sh with)
 
 4. If you replace your 'NewMacAddress' input with `default`, your MAC address will be set back to factory default.
 
@@ -48,9 +48,14 @@ An ERROR will occur when:
 ### Address Record:
 When switching to a **New MAC Address**, the **Initial MAC Address**, is automatically recorded along with its **Interface** in the *`./history.txt`*  file.
 
-### Final:
-If a command follows through completely, you should see your selected *Interface*, the *Initial Address*, and a *Success!* message showing your *New Address*
+### Using Python Script (mac.py):
+
+* Make sure you have Python Version 3.7 (or higher) installed
+* When inserting the command, replace `./mac.sh` with `python3 mac.py`
+* Does not currenty hold a historic record of addresses
 
 ---
+
+If a command follows through completely, you should see your selected *Interface*, the *Initial Address*, and a *Success!* message showing your *New Address*
 
 Happy spoofing!

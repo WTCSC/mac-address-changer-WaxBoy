@@ -1,6 +1,7 @@
 import sys
 import subprocess
 import re
+import random
 
 def macchanger():
     #Define the eternal trash can
@@ -37,8 +38,11 @@ def macchanger():
         
         ##ERROR 4: Bad format
         if INPUT != 'default':
-            print("ERROR: Invalid MAC Address Format")
-            return 4
+            if INPUT == 'random':
+                f"{random.getrandbits(4):x}{['0','2','4','6','8','a','c','e'][random.getrandbits(3)]}:{random.getrandbits(8):02x}:{random.getrandbits(8):02x}:{random.getrandbits(8):02x}:{random.getrandbits(8):02x}:{random.getrandbits(8):02x}"
+            else:
+                print("ERROR: Invalid MAC Address Format")
+                return 4
         
         #get Default MAC address
         INPUT = (subprocess.run(['ethtool', '-P', f'{INTERFACE}'], capture_output=True, text=True).stdout[19:-1])
